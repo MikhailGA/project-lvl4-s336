@@ -2,10 +2,7 @@
   "name": "nodejs-package",
   "version": "0.0.3",
   "description": "",
-  "main": "dist/index.js",
-  "bin": {
-    "hexlet": "dist/bin/hexlet.js"
-  },
+  "main": "index.js",
   "engines": {
     "node": ">=8"
   },
@@ -19,19 +16,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexlet-boilerplates/nodejs-package.git"
+    "url": "git+https://github.com/MikhailGA/project-lvl4-s336"
   },
   "author": "Kirill Mokevnin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hexlet-boilerplates/nodejs-package/issues"
+    "url": "https://github.com/MikhailGA/project-lvl4-s336/issues"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  "homepage": "https://github.com/hexlet-boilerplates/nodejs-package#readme",
+  "homepage": "https://github.com/MikhailGA/project-lvl4-s336#readme",
   "dependencies": {
     "gulp": "^4.0.0",
+    "koa": "^2.6.2",
     "source-map-support": "^0.5.9"
   },
   "devDependencies": {
