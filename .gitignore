@@ -3,4 +3,6 @@
 dist
 flow-typed
 .tern-port
-.idea
+*.sqlite
+public/assets
+.bash_history

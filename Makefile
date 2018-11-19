@@ -1,7 +1,7 @@
 install: install-deps install-flow-typed
 
-run:
-	npx babel-node -- './index.js'
+start:
+	DEBUG="application:*" NODE_ENV=production npx nodemon --watch .  --ext '.js' --exec npx gulp server
 
 install-deps:
 	npm install
@@ -14,7 +14,7 @@ build:
 	npm run build
 
 test:
-	npm test
+	NODE_ENV=development DEBUG=app npm test --detectOpenHandles
 
 check-types:
 	npx flow

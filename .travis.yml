@@ -2,10 +2,11 @@
 
 language: node_js
 node_js:
-  - node
+  - stable
 
 script:
   - make lint
+  - make test
 
 install:
   - npm install
