@@ -4,11 +4,11 @@ import Router from 'koa-router';
 import Pug from 'koa-pug';
 import path from 'path';
 import _ from 'lodash';
-// import koaWebpack from 'koa-webpack';
+import koaWebpack from 'koa-webpack';
 import dotenv from 'dotenv';
 import Rollbar from 'rollbar';
 
-// import webpackConfig from './webpack.config';
+import webpackConfig from './webpack.config';
 import addRoutes from './routes';
 import container from './container';
 
@@ -34,11 +34,11 @@ export default () => {
     }
   });
 
-  // if (process.env.NODE_ENV !== 'production') {
-  //   koaWebpack({
-  //     config: webpackConfig,
-  //   }).then(m => app.use(m));
-  // }
+  if (process.env.NODE_ENV !== 'production') {
+    koaWebpack({
+      config: webpackConfig,
+    }).then(m => app.use(m));
+  }
 
   const router = new Router();
   addRoutes(router, container);
