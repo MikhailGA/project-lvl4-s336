@@ -14,7 +14,7 @@ build:
 	npm run build
 
 test:
-	NODE_ENV=development DEBUG=app npm test --detectOpenHandles
+	NODE_ENV=production DEBUG=app npm test --detectOpenHandles
 
 check-types:
 	npx flow
