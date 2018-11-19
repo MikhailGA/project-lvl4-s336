@@ -1,7 +1,7 @@
 install: install-deps install-flow-typed
 
 start:
-	DEBUG="application:*" NODE_ENV=production npx nodemon --watch .  --ext '.js' --exec npx gulp server
+	DEBUG="application:*" NODE_ENV=development npx nodemon --watch .  --ext '.js' --exec npx gulp server
 
 install-deps:
 	npm install
