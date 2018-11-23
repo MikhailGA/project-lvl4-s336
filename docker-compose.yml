@@ -10,5 +10,4 @@ services:
       - "8081:8081"
     volumes:
       - .:/code
-      # - ../assets:/app/assets
       - ./.bash_history:/root/.bash_history
