@@ -7,6 +7,9 @@ import _ from 'lodash';
 import koaWebpack from 'koa-webpack';
 import dotenv from 'dotenv';
 import Rollbar from 'rollbar';
+import koaLogger from 'koa-logger';
+import serve from 'koa-static';
+import session from 'koa-session';
 
 import webpackConfig from './webpack.config';
 import addRoutes from './routes';
@@ -34,12 +37,16 @@ export default () => {
     }
   });
 
-  if (process.env.NODE_ENV !== 'production') {
+  app.use(serve(path.join(__dirname)));
+  app.use(session(app));
+
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
     koaWebpack({
       config: webpackConfig,
     }).then(m => app.use(m));
   }
 
+  app.use(koaLogger());
   const router = new Router();
   addRoutes(router, container);
   app.use(router.allowedMethods());

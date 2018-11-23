@@ -1,0 +1,19 @@
+{
+  "development": {
+    "database": "test",
+    "storage": "./db.development.sqlite",
+    "dialect": "sqlite",
+    "host": "localhost"
+  },
+  "test": {
+    "database": "test",
+    "storage": ":memory:",
+    "dialect": "sqlite",
+    "host": "localhost"
+  },
+  "production": {
+    "dialect": "postgres",
+    "host": "ec2-54-83-8-246.compute-1.amazonaws.com",
+    "port": "5432"
+  }
+}

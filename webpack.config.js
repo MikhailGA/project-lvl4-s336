@@ -1,8 +1,12 @@
+const path = require('path');
+
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: ['./src/index.js'],
   output: {
-    publicPath: '/assets/',
+    path: path.join(__dirname, '/assets'),
+    filename: 'main.js',
+    // publicPath: '/assets/',
   },
   module: {
     rules: [
